@@ -22,8 +22,6 @@ import kotlinx.coroutines.*
 import kotlin.text.toInt as toInt1
 
 
-
-@Suppress("DEPRECATION")
 class AppleFragment : Fragment() {
 
     var valueMax: Int? = null
