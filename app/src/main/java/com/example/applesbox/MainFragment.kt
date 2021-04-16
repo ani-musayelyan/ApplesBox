@@ -24,24 +24,19 @@ class MainFragment : Fragment() {
         communicator = activity as Communicator
 
         view.start.setOnClickListener {
-            if (max.text.isNotEmpty() && initial.text.isNotEmpty()) {
+            if (max.text.isNotEmpty() && initial.text.isNotEmpty() && initial.text.toString().toInt() < max.text.toString().toInt()) {
                 communicator.passData(view.max.text.toString() , view.initial.text.toString())
-
-            } else {
-                Toast.makeText(context , "Input your count" , Toast.LENGTH_SHORT).show()
+            }
+            if (max.text.isEmpty() || initial.text.isEmpty() || initial.text.toString().toInt() > max.text.toString().toInt()) {
+                Toast.makeText(context , "Input your count or check your max and initial " , Toast.LENGTH_SHORT).show()
             }
         }
-
-
         return view
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
 
     }
 }
