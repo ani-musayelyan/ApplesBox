@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.os.AsyncTask
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -95,6 +96,7 @@ class AppleFragment : Fragment() {
         }
 
         minus.setOnClickListener {
+            view.reset.visibility = View.INVISIBLE
             val asyncTask = @SuppressLint("StaticFieldLeak")
             object : AsyncTask<Void, Int, String>() {
 
@@ -123,5 +125,8 @@ class AppleFragment : Fragment() {
             asyncTask.execute()
             check()
         }
+
+
+
             }
         }
