@@ -95,6 +95,7 @@ class AppleFragment : Fragment() {
         }
 
         minus.setOnClickListener {
+            view.reset.visibility = View.INVISIBLE
             val asyncTask = @SuppressLint("StaticFieldLeak")
             object : AsyncTask<Void, Int, String>() {
 
